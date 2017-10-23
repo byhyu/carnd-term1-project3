@@ -133,7 +133,10 @@ Even after cropping and resizing training images (with all augmented images), tr
 
 This resulted in a learning rate as shown here
 
-![image1](./loss.png) "Model Visualization"
+![loss](writeup-images/loss.png) 
+
+MSE loss for traing and validation sets
+
 
 #### 4. Results
 Using the Udacity provided simulator and my model.h5 file, the car can be driven autonomously around the track by executing
