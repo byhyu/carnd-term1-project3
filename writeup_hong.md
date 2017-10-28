@@ -144,21 +144,19 @@ Using the Udacity provided simulator and my model.h5 file, the car can be driven
 `sh
 python drive.py model.h5 run
 `
-
-Results can be seen in the attached .mp4 files. For track 1, the car drives pretty well. At certain points, the car almost drives off road, but succeeded to return to center of road:
+##### Failed Case:
+In my initial submission, the car fails to drive in the center of road at certain points, as demonstrated from the figures below:
 
 ![offroad](writeup-images/off-road.jpg)
-![onroad](writeup-images/on-road.jpg)
 
-For track 2, however, the model didn't work. The car immediately tried to drive into the opposite lane...
-![track2](writeup-images/track2.jpg)
+Results can be seen in the attached run4_track1.mp4 files. 
 
-
-
+###### Model Revision
+A new image with random change of brightness was created to increase the diversity of the training data, in addition to image flipping. The revised model yields better results. The car kept on track for the whole course, as can be seen in attached [rev1_run2.mp4](rev1_run2.mp4)
 
 
 ## Conclusions and Future Directions
-Training datasets did make huge impact on the quality of behavior cloing model. In the initial phase, I trained the model with a small (and unsteady) dataset I generated and it didn't work well. The dataset provided by Udacity didn't contain enough data points on curved roads. So I manually generated these datasets. By combining these two sources of data, I managed to generate a model that drived the car pretty well on Track 1. 
+Training datasets did make huge impact on the quality of behavior cloing model. In the initial phase, I trained the model with a small (and unsteady) dataset I generated and it didn't work well. The dataset provided by Udacity yields better results. However, the car went off track at certain points. To increase the diversity of training data, a random change of image was added, togethe with flipped image. In this way, the training dataset was enlarged by factor of 3. With the revised model, I managed to have the car drive pretty well on Track 1. 
 
 When it comes to extensions and future directions, I would like to add more training data from Track 2 to improve the model's performance on Track 2. Also, it would be interesting to investigate the impact of model parameters suchs as batch size and training epochs on the model performance. Quantative study of the effect of `ANGLE_CORRECTION` also seems interesting. 
 
